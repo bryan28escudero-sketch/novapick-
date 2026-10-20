@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NovaPick: guías claras y comparativas de tecnología y productos útiles para el hogar.">
+  <meta name="theme-color" content="#1457d9">
+  <title>NovaPick — Descubre. Compara. Elige mejor.</title>
+  <style>
+    :root{--blue:#1457d9;--blue2:#eaf2ff;--ink:#13233f;--muted:#61708a;--line:#e5ebf4;--bg:#f7f9fc;--white:#fff;--shadow:0 12px 34px rgba(24,55,105,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    a{color:inherit}button,input{font:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+    .notice{background:#edf4ff;color:#29436b;text-align:center;padding:9px 14px;font-size:.83rem;border-bottom:1px solid #dbe8ff}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;font-size:1.5rem;letter-spacing:-.7px}.logo{width:40px;height:40px;border-radius:13px;background:var(--blue);display:grid;place-items:center;color:white;font-weight:900;box-shadow:0 7px 16px #1457d933}
+    .brand span:last-child{color:var(--blue)}nav{display:flex;gap:23px;align-items:center}nav a{text-decoration:none;color:#465875;font-weight:650;font-size:.94rem}nav a:hover{color:var(--blue)}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750;border:0;cursor:pointer;box-shadow:0 7px 16px #1457d925}.button:hover{background:#0d45b4}.button.secondary{background:white;color:var(--blue);border:1px solid #d8e5ff;box-shadow:none}
+    .hero{padding:68px 0 46px;background:radial-gradient(ellipse at 85% 10%,#dceaff 0,transparent 35%),linear-gradient(180deg,#fff,#f7f9fc)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}.eyebrow{display:inline-block;color:var(--blue);font-size:.78rem;font-weight:850;text-transform:uppercase;letter-spacing:1.4px;background:var(--blue2);padding:7px 11px;border-radius:999px}
+    h1{font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.05;letter-spacing:-2.5px;margin:18px 0}.hero p{font-size:1.1rem;color:var(--muted);max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.hero-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--shadow);transform:rotate(1deg)}
+    .mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;font-weight:800}.pill{font-size:.75rem;color:var(--blue);background:var(--blue2);padding:5px 9px;border-radius:99px}
+    .feature{display:grid;grid-template-columns:94px 1fr;gap:14px;padding:13px 0;border-top:1px solid var(--line);align-items:center}.feature-icon{height:88px;border-radius:17px;display:grid;place-items:center;font-size:2.4rem;background:linear-gradient(135deg,#eaf2ff,#f5f8ff)}.feature h3{margin:0 0 4px;font-size:1rem}.feature p{margin:0;font-size:.85rem}
+    section{padding:48px 0}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}.section-head h2{margin:0;font-size:clamp(1.7rem,3vw,2.35rem);letter-spacing:-.8px}.section-head p{margin:6px 0 0;color:var(--muted)}.search{display:flex;gap:8px;width:min(360px,100%)}.search input{min-width:0;width:100%;border:1px solid #dbe3ef;border-radius:12px;padding:11px 13px;background:white;outline-color:var(--blue)}
+    .categories{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.category{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;gap:18px;align-items:center;text-decoration:none;box-shadow:0 5px 20px #193e7108;transition:transform .18s,border-color .18s}.category:hover{transform:translateY(-3px);border-color:#b7cdfa}.cat-icon{flex:0 0 72px;width:72px;height:72px;border-radius:19px;background:var(--blue2);display:grid;place-items:center;font-size:2rem}.category h3{margin:0 0 5px}.category p{margin:0;color:var(--muted);font-size:.93rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{background:#fff;border:1px solid var(--line);border-radius:19px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px #193e7108}.product-art{height:150px;display:grid;place-items:center;font-size:3.6rem;background:linear-gradient(135deg,#eaf2ff,#f7faff)}.product-body{padding:18px;display:flex;flex-direction:column;flex:1}.product .tag{color:var(--blue);font-size:.74rem;text-transform:uppercase;font-weight:850;letter-spacing:.8px}.product h3{margin:8px 0;font-size:1.1rem}.product p{margin:0 0 17px;color:var(--muted);font-size:.92rem;flex:1}.product .button{font-size:.9rem;padding:10px 12px}.placeholder{font-size:.8rem;color:#73829a;margin-top:9px}
+    .callout{background:#123e9c;color:white;border-radius:24px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:25px}.callout h2{margin:0 0 8px;font-size:1.8rem}.callout p{margin:0;color:#dbe7ff;max-width:650px}.callout .button{background:white;color:#1747a5;box-shadow:none;white-space:nowrap}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.about-box{padding:25px;background:white;border:1px solid var(--line);border-radius:20px}.about-box h3{margin-top:0}.about-box p{color:var(--muted);margin-bottom:0}
+    footer{margin-top:30px;background:white;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:start}.footer-links{display:flex;flex-wrap:wrap;gap:15px}.footer-links a{color:var(--blue)}.disclosure{background:#f3f6fb;border-radius:12px;padding:13px 15px;margin-top:20px;color:#4e5f7a;font-size:.82rem}
+    .empty{display:none;padding:25px;text-align:center;color:var(--muted);background:white;border:1px solid var(--line);border-radius:14px}.fineprint{font-size:.82rem;color:var(--muted)}
+    @media(max-width:800px){nav{gap:12px}nav a:not(.button){display:none}.hero-grid{grid-template-columns:1fr}.hero{padding-top:45px}.hero-card{transform:none}.grid{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.search{width:100%}.callout{align-items:start;flex-direction:column}.about-grid{grid-template-columns:1fr}}
+    @media(max-width:520px){.wrap{width:min(100% - 26px,1120px)}.nav{min-height:66px}.brand{font-size:1.3rem}.logo{width:36px;height:36px}.hero h1{letter-spacing:-1.6px}.categories,.grid{grid-template-columns:1fr}.category{padding:18px}.product-art{height:125px}.footer-row{flex-direction:column}.hero p{font-size:1rem}}
+  </style>
+</head>
+<body>
+  <div class="notice">Guías claras y recomendaciones útiles · Tecnología + hogar</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="NovaPick inicio"><span class="logo">N</span><span>NovaPick</span></a>
+      <nav aria-label="Navegación principal">
+        <a href="#categorias">Categorías</a><a href="#destacados">Recomendaciones</a><a href="#nosotros">Sobre NovaPick</a>
+        <a class="button" href="#destacados">Explorar productos</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Compra con más información</span>
+          <h1>Buenas ideas.<br><span style="color:var(--blue)">Mejores elecciones.</span></h1>
+          <p>Descubre accesorios tecnológicos y productos prácticos para el hogar con guías sencillas que te ayudan a comparar opciones y elegir según tus necesidades.</p>
+          <div class="hero-actions"><a class="button" href="#destacados">Ver recomendaciones <span aria-hidden="true">→</span></a><a class="button secondary" href="#categorias">Explorar categorías</a></div>
+          <p class="fineprint">NovaPick es un sitio independiente de recomendaciones. No somos Amazon.</p>
+        </div>
+        <div class="hero-card" aria-label="Vista previa de categorías">
+          <div class="mock-top"><span>Selecciones NovaPick</span><span class="pill">Guía de compra</span></div>
+          <div class="feature"><div class="feature-icon">🎧</div><div><h3>Accesorios tecnológicos</h3><p>Audio, escritorio y dispositivos útiles.</p></div></div>
+          <div class="feature"><div class="feature-icon">💡</div><div><h3>Hogar inteligente</h3><p>Iluminación y soluciones para tu espacio.</p></div></div>
+          <div class="feature"><div class="feature-icon">🧺</div><div><h3>Organización del hogar</h3><p>Ideas prácticas para el día a día.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="categorias">
+      <div class="wrap">
+        <div class="section-head"><div><h2>Explora por categoría</h2><p>Encuentra ideas para tu tecnología y tu hogar.</p></div></div>
+        <div class="categories">
+          <a class="category" href="#destacados" data-filter-link="Tecnología"><div class="cat-icon">💻</div><div><h3>Tecnología</h3><p>Audio, accesorios para móviles y escritorio.</p></div></a>
+          <a class="category" href="#destacados" data-filter-link="Hogar"><div class="cat-icon">🏠</div><div><h3>Hogar</h3><p>Organización, iluminación y dispositivos prácticos.</p></div></a>
+        </div>
+      </div>
+    </section>
+    <section id="destacados">
+      <div class="wrap">
+        <div class="section-head"><div><h2>Ideas para descubrir</h2><p>Ejemplos de categorías para convertir en guías de compra.</p></div>
+          <div class="search"><input id="searchInput" type="search" placeholder="Buscar productos o categorías…" aria-label="Buscar productos o categorías"></div>
+        </div>
+        <div class="grid" id="productGrid">
+          <article class="product" data-category="Tecnología" data-search="audífonos audio tecnología inalámbricos">
+            <div class="product-art" aria-hidden="true">🎧</div><div class="product-body"><span class="tag">Tecnología · Audio</span><h3>Audífonos inalámbricos</h3><p>Compara autonomía, comodidad, calidad de sonido y compatibilidad antes de elegir.</p><a class="button secondary product-link" href="#como-enlazar" data-product="Audífonos inalámbricos">Preparar enlace de producto</a><span class="placeholder">Añade aquí tu enlace de afiliado aprobado.</span></div>
+          </article>
+          <article class="product" data-category="Tecnología" data-search="teclado ratón mouse escritorio computadora tecnología">
+            <div class="product-art" aria-hidden="true">⌨️</div><div class="product-body"><span class="tag">Tecnología · Escritorio</span><h3>Accesorios para escritorio</h3><p>Busca opciones cómodas, compatibles y adecuadas para estudiar o trabajar.</p><a class="button secondary product-link" href="#como-enlazar" data-product="Accesorios para escritorio">Preparar enlace de producto</a><span class="placeholder">Añade aquí tu enlace de afiliado aprobado.</span></div>
+          </article>
+          <article class="product" data-category="Hogar" data-search="bombillas inteligentes iluminación hogar luz">
+            <div class="product-art" aria-hidden="true">💡</div><div class="product-body"><span class="tag">Hogar · Iluminación</span><h3>Iluminación inteligente</h3><p>Comprueba el tipo de conexión, la compatibilidad y si requiere un concentrador.</p><a class="button secondary product-link" href="#como-enlazar" data-product="Iluminación inteligente">Preparar enlace de producto</a><span class="placeholder">Añade aquí tu enlace de afiliado aprobado.</span></div>
+          </article>
+          <article class="product" data-category="Hogar" data-search="organizador cocina almacenamiento hogar orden">
+            <div class="product-art" aria-hidden="true">🧺</div><div class="product-body"><span class="tag">Hogar · Organización</span><h3>Organizadores para el hogar</h3><p>Compara dimensiones, materiales y facilidad de limpieza para aprovechar el espacio.</p><a class="button secondary product-link" href="#como-enlazar" data-product="Organizadores para el hogar">Preparar enlace de producto</a><span class="placeholder">Añade aquí tu enlace de afiliado aprobado.</span></div>
+          </article>
+          <article class="product" data-category="Hogar" data-search="aspiradora robot limpieza hogar smart">
+            <div class="product-art" aria-hidden="true">🤖</div><div class="product-body"><span class="tag">Hogar · Limpieza</span><h3>Aspiradoras robot</h3><p>Revisa autonomía, altura, mantenimiento, tipo de suelo y disponibilidad de repuestos.</p><a class="button secondary product-link" href="#como-enlazar" data-product="Aspiradoras robot">Preparar enlace de producto</a><span class="placeholder">Añade aquí tu enlace de afiliado aprobado.</span></div>
+          </article>
+          <article class="product" data-category="Tecnología" data-search="cargador celular accesorios tecnología usb">
+            <div class="product-art" aria-hidden="true">🔌</div><div class="product-body"><span class="tag">Tecnología · Accesorios</span><h3>Cargadores y accesorios</h3><p>Verifica conectores, potencia compatible, certificaciones y necesidades de tus dispositivos.</p><a class="button secondary product-link" href="#como-enlazar" data-product="Cargadores y accesorios">Preparar enlace de producto</a><span class="placeholder">Añade aquí tu enlace de afiliado aprobado.</span></div>
+          </article>
+        </div>
+        <div class="empty" id="emptyState">No encontramos resultados. Prueba con otra palabra.</div>
+        <p class="fineprint">Estas tarjetas son ideas editoriales, no productos específicos ni reseñas de artículos probados. Añade productos reales y verifica sus detalles antes de publicarlos.</p>
+      </div>
+    </section>
+    <section id="como-enlazar">
+      <div class="wrap">
+        <div class="callout"><div><h2>Recomendaciones transparentes</h2><p>Cuando incorpores enlaces de afiliado aprobados, informa claramente a tus lectores. Las características y los precios pueden cambiar; consulta la información vigente en la tienda.</p></div><a class="button" href="https://affiliate-program.amazon.com/" target="_blank" rel="noopener noreferrer">Programa de Amazon ↗</a></div>
+      </div>
+    </section>
+    <section id="nosotros">
+      <div class="wrap">
+        <div class="section-head"><div><h2>¿Qué es NovaPick?</h2><p>Un punto de partida para tomar decisiones informadas.</p></div></div>
+        <div class="about-grid">
+          <div class="about-box"><h3>Guías sencillas</h3><p>Explicamos qué características conviene revisar y qué preguntas hacer antes de comprar. Publicaremos comparaciones basadas en información comprobable.</p></div>
+          <div class="about-box"><h3>Transparencia primero</h3><p>Podemos recibir comisiones por compras elegibles realizadas mediante enlaces de afiliado, sin que eso sustituya la necesidad de investigar y comparar.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footer-row"><div><a class="brand" href="#"><span class="logo">N</span><span>NovaPick</span></a><p>Descubre. Compara. Elige mejor.</p></div>
+        <div class="footer-links"><a href="#nosotros">Sobre nosotros</a><a href="#como-enlazar">Afiliación</a><a href="mailto:hola@novapick.example">Contacto (cambiar correo)</a></div>
+      </div>
+      <div class="disclosure"><strong>Divulgación de afiliación:</strong> Como un Afiliado de Amazon, gano por compras elegibles. (As an Amazon Associate I earn from qualifying purchases.) Esta página es una plantilla de demostración; los enlaces de producto todavía no están conectados a una cuenta de afiliado.</div>
+      <p class="fineprint">© <span id="year"></span> NovaPick. Revisa y completa la política de privacidad, los datos de contacto y los avisos legales aplicables antes de lanzar el sitio públicamente. NovaPick no está afiliado ni patrocinado por Amazon.</p>
+    </div>
+  </footer>
+  <script>
+    const input=document.getElementById('searchInput');
+    const cards=[...document.querySelectorAll('.product')];
+    const empty=document.getElementById('emptyState');
+    let category='';
+    function filterCards(){const q=input.value.trim().toLocaleLowerCase('es');let shown=0;cards.forEach(card=>{const matchText=(card.dataset.search+' '+card.innerText).toLocaleLowerCase('es').includes(q);const matchCat=!category||card.dataset.category===category;card.style.display=matchText&&matchCat?'flex':'none';if(matchText&&matchCat)shown++});empty.style.display=shown?'none':'block'}
+    input.addEventListener('input',filterCards);
+    document.querySelectorAll('[data-filter-link]').forEach(link=>link.addEventListener('click',()=>{category=link.dataset.filterLink;input.value='';filterCards()}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+    document.querySelectorAll('.product-link').forEach(link=>link.addEventListener('click',()=>{const product=link.dataset.product;alert('Para publicar "'+product+'", primero elige un producto real y pega aquí tu enlace especial de Amazon Associates aprobado. No publiques este botón como enlace de afiliado todavía.');}));
+  </script>
+</body>
+</html>
